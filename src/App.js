@@ -57,18 +57,7 @@ class App extends Component {
         <button onClick={this.addContact}>Add Random Actor</button>
         <button onClick={this.sortContact}>Sort by Name</button>
         <button onClick={this.sortContactByPopularity}>Sort by Polularity</button>
-        <ul>
-            {this.state.actors.map((actor, index) => {
-            return <Famous
-              key={index}
-              index={index}
-              image={actor.pictureUrl}
-              name={actor.name}
-              popularity={actor.popularity}
-              contactDeleted={this.deleteContact}
-            />
-            })}  
-        </ul>
+        <Famous contacts={this.state.actors} />
       </div>
     );
   }
